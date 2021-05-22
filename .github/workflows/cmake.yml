@@ -3,6 +3,8 @@ name: cmake
 on:
   push:
     branches: [master]
+  schedule:
+    - cron:  '0 23 * * 4'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -63,4 +65,4 @@ jobs:
         with:
           name: cmake-${{ env.VERSION }}
           path: cmake-${{ env.VERSION }}.tar.gz
-          retention-days: 1
+          retention-days: 7
